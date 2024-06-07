@@ -3,9 +3,9 @@ Fleeca.BanksRobbed = {}
 
 print("^2[FLEECA] - Var-Fleeca started successfully^7")
 
-if Shared.Framework.ESX then
+if Fleeca.Framework.ESX then
     ESX = exports["es_extended"]:getSharedObject()
-elseif Shared.Framework.QBCore then
+elseif Fleeca.Framework.QBCore then
     QBCore = exports['qb-core']:GetCoreObject()
 end
 
@@ -22,7 +22,7 @@ local function SetCooldown(id)
 end
 
 local function GetCoolDown(id)
-    if Shared.Framework.ESX then
+    if Fleeca.Framework.ESX then
         local Player = ESX.GetPlayerFromId(source)
         if Fleeca.BanksRobbed[id] then
             if (os.time() - Fleeca.CoolDown) > Fleeca.BanksRobbed[id] then
@@ -36,7 +36,7 @@ local function GetCoolDown(id)
             end
             TriggerClientEvent("Fleeca:BinginDrill", source)
         end
-    elseif Shared.Framework.QBCore then
+    elseif Fleeca.Framework.QBCore then
         local Player = QBCore.Functions.GetPlayer(source)
         if Fleeca.BanksRobbed[id] then
             if (os.time() - Fleeca.CoolDown) > Fleeca.BanksRobbed[id] then
@@ -54,12 +54,12 @@ local function GetCoolDown(id)
 end
 
 local function GiveMoney(money)
-    if Shared.Framework.ESX then
+    if Fleeca.Framework.ESX then
         local Player = ESX.GetPlayerFromId(source)
         if Player then
             Player.addAccountMoney(Fleeca.MoneyType, money)
         end
-    elseif Shared.Framework.QBCore then
+    elseif Fleeca.Framework.QBCore then
         local Player = QBCore.Functions.GetPlayer(source)
         if Player then
             Player.Functions.AddMoney(Fleeca.MoneyType, money)
@@ -68,7 +68,7 @@ local function GiveMoney(money)
 end
 
 local function CheckCopsOnDuty(source)
-    if Shared.Framework.ESX then
+    if Fleeca.Framework.ESX then
         local Players = ESX.GetPlayers()
         local CopsOnDuty = Fleeca.CopsOnDuty
     
@@ -84,7 +84,7 @@ local function CheckCopsOnDuty(source)
         else
             TriggerClientEvent("esx:showNotification", source, Fleeca.Locale.NoCops)
         end
-    elseif Shared.Framework.QBCore then
+    elseif Fleeca.Framework.QBCore then
         local Players = QBCore.Functions.GetPlayers()
         local CopsOnDuty = Fleeca.CopsOnDuty
     
@@ -119,11 +119,11 @@ RegisterServerEvent("Fleeca:GiveMoney")
 AddEventHandler("Fleeca:GiveMoney", GiveMoney)
 
 
-if Shared.Framework.ESX then
+if Fleeca.Framework.ESX then
     ESX.RegisterUsableItem(Fleeca.ItemDrill, function(source)
         CheckCopsOnDuty(source)
     end)
-elseif Shared.Framework.QBCore then
+elseif Fleeca.Framework.QBCore then
     QBCore.Functions.CreateUseableItem(Fleeca.ItemDrill, function(source, item)
         local Player = QBCore.Functions.GetPlayer(source)
         if not Player.Functions.GetItemByName(item.name) then return end
