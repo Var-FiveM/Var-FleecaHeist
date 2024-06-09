@@ -1,4 +1,4 @@
-Fleeca = Fleeca or {}
+Fleeca = {}
 
 Fleeca.Framerwork = {
     ESX = true,

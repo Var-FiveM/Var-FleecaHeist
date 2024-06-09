@@ -138,18 +138,18 @@ function Fleeca:StartFleecaHeist()
     end
 
     if not FleecaIn then
-        if Shared.Framework.ESX then
+        if Fleeca.Framework.ESX then
             ESX.ShowNotification(Fleeca.Locale.NotInFleeca)
-        elseif Shared.Framework.QBCore then
+        elseif Fleeca.Framework.QBCore then
             QBCore.Functions.Notify(Fleeca.Locale.NotInFleeca, 'error', 5000)
         end
         return
     end
 
     if not Fleeca:PlayerHasBag() and Fleeca.NeedBag then
-        if Shared.Framework.ESX then
+        if Fleeca.Framework.ESX then
             ESX.ShowNotification(Fleeca.Locale.NeedBag)
-        elseif Shared.Framework.QBCore then
+        elseif Fleeca.Framework.QBCore then
             QBCore.Functions.Notify(Fleeca.Locale.NeedBag, 'info', 5000)
         end
         return

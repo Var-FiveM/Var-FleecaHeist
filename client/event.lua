@@ -1,6 +1,6 @@
-if Shared.Framework.ESX then
+if Fleeca.Framework.ESX then
     ESX = exports["es_extended"]:getSharedObject()
-elseif Shared.Framework.QBCore then
+elseif Fleeca.Framework.QBCore then
     QBCore = exports['qb-core']:GetCoreObject()
 end
 
@@ -120,9 +120,9 @@ AddEventHandler("Fleeca:ClientBankHeist", function(action, data)
         local moneyToGive = math.random(minAmount, maxAmount)
         TriggerServerEvent("Fleeca:GiveMoney", moneyToGive)
 
-        if Shared.Framework.ESX then
+        if Fleeca.Framework.ESX then
             ESX.ShowNotification(Fleeca.Locale.GiveMoney..moneyToGive)
-        elseif Shared.Framework.QBCore then
+        elseif Fleeca.Framework.QBCore then
             QBCore.Functions.Notify(Fleeca.Locale.GiveMoney..moneyToGive, 'success', 5000)
         end
 

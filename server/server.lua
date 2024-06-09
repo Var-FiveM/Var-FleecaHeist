@@ -1,4 +1,3 @@
-Fleeca = Fleeca or {}
 Fleeca.BanksRobbed = {}
 
 print("^2[FLEECA] - Var-Fleeca started successfully^7")
