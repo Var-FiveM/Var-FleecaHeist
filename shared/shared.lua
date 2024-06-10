@@ -1,6 +1,6 @@
 Fleeca = {}
 
-Fleeca.Framerwork = {
+Fleeca.Framework = {
     ESX = true,
     QBCore = false
 }

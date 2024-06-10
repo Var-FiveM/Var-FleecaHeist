@@ -13,10 +13,3 @@ server_script {
 shared_scripts {
     "shared/*.lua"
 }
-
-escrow_ignore {
-	"client/event.lua",
-	"client/functions.lua",
-	"server/**/*",
-	"shared/**/*"
-}
