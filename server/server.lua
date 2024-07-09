@@ -89,7 +89,7 @@ local function CheckCopsOnDuty(source)
     
         for i = 1, #Players do
             local Player = QBCore.Functions.GetPlayer(Players[i])
-            if Player.Player.job.name == Fleeca.CopsJobName then
+            if Player.job.name == Fleeca.CopsJobName then
                 CopsOnDuty = CopsOnDuty + 1
             end
         end
