@@ -7,6 +7,7 @@
 ## Authors ✒️
 
 - [@Skafir](https://github.com/Skafir)
+- [Var FiveM](https://www.var-fivem.com/)
 
 ## Previews 📹
 
